@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerPlate")%>
+
+  
+       <div class="row">
+        <div class="col-8 offset-2">
+             <h2>Edit a Listing</h2>
+        <form action="/listing" method="post" novalidate class="needs-validation">
+           <div class="mb-3">
+             <label for="name" class="form-label">Enter Title</label>
+            <input type="text" class="form-control"value="<%= listing.name%>" placeholder="Add a catchy Title" name="name" id="name" required>
+             <div class="valid-feedback">Title Looks good!</div>
+        <div class="invalid-feedback">enter valid title</div>
+           </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Enter Description</label>
+            <textarea  type="text" class="form-control" placeholder="" name="description" id="description" required><%= listing.description%></textarea>
+             <div class="valid-feedback">Description Looks good!</div>
+        <div class="invalid-feedback">enter valid Description</div>
+            </div>
+
+           <div class="mb-3">
+             <label for="image" class="form-label">Enter Image URL/Link</label>
+            <input type="text" class="form-control"value="<%= listing.image%>" placeholder="Enter Image Link" name="image" id="image" required>
+           </div>
+
+
+          <div class="row">
+              <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">Enter price</label>
+            <input type="number" class="form-control"value="<%= listing.price%>" placeholder="1200" name="price" id="price" required>
+             <div class="invalid-feedback">enter valid price</div>
+            </div>
+
+             <div class="mb-3 col-md-8">
+             <label for="country" class="form-label">Enter Country</label>
+            <input type="text" class="form-control"value="<%= listing.country%>" placeholder="India" name="country" id="country" required>
+            <div class="valid-feedback">Country Looks good!</div>
+        <div class="invalid-feedback">enter valid country</div>
+           </div>
+          </div>
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Enter Location</label>
+            <input type="text" class="form-control"value="<%= listing.location%>" placeholder="Delhi, India" name="location" id="location" required>
+             <div class="valid-feedback">Location Looks good!</div>
+        <div class="invalid-feedback">enter valid Location</div>
+            </div>
+
+          
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+
+        </div>
+       </div>

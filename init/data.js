@@ -1,6 +1,6 @@
 const sampleListings = [
   {
-    name: "Cozy Beachfront Cottage",
+    title: "Cozy Beachfront Cottage",
     description:
       "Escape to this charming beachfront cottage for a relaxing getaway. Enjoy stunning ocean views and easy access to the beach.",
     image:
@@ -10,7 +10,7 @@ const sampleListings = [
     country: "United States",
   },
   {
-    name: "Modern Loft in Downtown",
+    title: "Modern Loft in Downtown",
     description:
       "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
     image:
@@ -20,7 +20,7 @@ const sampleListings = [
     country: "United States",
   },
   {
-    name: "Rustic Cabin in the Woods",
+    title: "Rustic Cabin in the Woods",
     description:
       "Unplug and unwind in this cozy cabin surrounded by nature. Ideal for hiking and outdoor adventures.",
     image:
@@ -30,7 +30,7 @@ const sampleListings = [
     country: "United States",
   },
   {
-    name: "Luxury Villa with Pool",
+    title: "Luxury Villa with Pool",
     description:
       "Experience luxury living in this spacious villa with a private pool and breathtaking views.",
     image:
@@ -40,7 +40,7 @@ const sampleListings = [
     country: "United States",
   },
   {
-    name: "Charming Studio in Paris",
+    title: "Charming Studio in Paris",
     description:
       "Discover the romance of Paris in this charming studio apartment located in the city center.",
     image:
@@ -50,7 +50,7 @@ const sampleListings = [
     country: "France",
   },
   {
-    name: "Beachfront Bungalow in Bali",
+    title: "Beachfront Bungalow in Bali",
     description:
       "Relax in this beautiful beachfront bungalow in Bali. Perfect for a tropical getaway.",
     image:
@@ -60,7 +60,7 @@ const sampleListings = [
     country: "Indonesia",
   },
   {
-    name: "Mountain Retreat in Switzerland",
+    title: "Mountain Retreat in Switzerland",
     description:
       "Enjoy the serene beauty of the Swiss Alps in this comfortable mountain retreat.",
     image:
@@ -70,7 +70,7 @@ const sampleListings = [
     country: "Switzerland",
   },
   {
-    name: "Desert Oasis in Morocco",
+    title: "Desert Oasis in Morocco",
     description:
       "Experience the magic of the desert in this luxurious oasis in Morocco.",
     image:
@@ -80,7 +80,7 @@ const sampleListings = [
     country: "Morocco",
   },
   {
-    name: "Countryside Cottage in England",
+    title: "Countryside Cottage in England",
     description:
       "Relax in this charming countryside cottage in the heart of England.",
     image:
@@ -90,7 +90,7 @@ const sampleListings = [
     country: "United Kingdom",
   },
   {
-    name: "Ski Chalet in Canada",
+    title: "Ski Chalet in Canada",
     description:
       "Hit the slopes and then relax in this cozy ski chalet in the Canadian Rockies.",
     image:

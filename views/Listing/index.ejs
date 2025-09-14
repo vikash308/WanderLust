@@ -1,6 +1,5 @@
 <% layout("/layouts/boilerPlate")%>
 <body>
-
  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
      <%for(let list of listings) {%>
  <a href="/listing/<%= list._id %>">
@@ -9,7 +8,7 @@
     <div class="card-img-overlay"></div>
     <div class="card-body">
       <p class="card-text">
-       <b> <%=list.name%></b>
+       <b> <%=list.title%></b>
         <br />
         <%=list.price.toLocaleString("en-IN")%>/night
       </p>

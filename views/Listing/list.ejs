@@ -2,7 +2,7 @@
 
 <div class="row mt-3">
     <div class="col-8 offset-3">
-        <h3><b><%= listing.name %></b></h3>
+        <h3><b><%= listing.title %></b></h3>
     </div>
 
     <!-- Listing Card -->
@@ -37,11 +37,11 @@
         <form action="/listing/<%= listing._id %>/reviews" method="post" novalidate class="needs-validation">
             <div class="mb-3 mt-3">
                 <label for="rating" class="form-label">Rating</label>
-                <input type="range" min="1" max="5" name="review[rating]" id="rating" class="form-range">
+                <input type="range" min="1" max="5" title="review[rating]" id="rating" class="form-range">
             </div>
             <div class="mb-3 mt-3">
                 <label for="comment">Comments</label>
-                <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control"  required></textarea>
+                <textarea title="review[comment]" id="comment" cols="30" rows="5" class="form-control"  required></textarea>
                 <div class="invalid-feedback">Please enter some comments</div>
             </div>
             <button class="btn btn-dark">Submit</button>

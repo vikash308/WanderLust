@@ -4,12 +4,16 @@ const app = express();
 const mongoose = require('mongoose');
 const listingRouter = require("./routes/listing.js")
 const reviewRouter = require("./routes/review.js")
+const userRouter = require("./routes/user.js")
 const path = require("path")
 const methodOverride = require("method-override")
 const ejsMate = require("ejs-mate") 
 const ExpressError = require("./utils/ExpressError.js")
 const session = require("express-session")
 const flash = require("connect-flash")
+const User = require("./models/userModel.js")
+const passport = require("passport");
+const LocalStrategy = require("passport-local")
 
 // Middlewares
 app.use(methodOverride('_method'));
@@ -45,6 +49,14 @@ const sessionoption  = {
 
 app.use(session(sessionoption));
 app.use(flash())
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
 app.use((req,res,next)=>{
     res.locals.success = req.flash("success")
     res.locals.error = req.flash("error")
@@ -56,8 +68,18 @@ app.get("/", (req, res) => {
     res.send("hello world")
 })
 
+app.get("/demo",async (req,res)=>{
+    let fakeuser =new User({
+        email:"student@gmail.com",
+        username:"demo"
+    })
+    let user = await User.register(fakeuser, "password123");
+    res.send(user)
+})
+
 app.use("/listing", listingRouter)
 app.use("/listing/:id/reviews", reviewRouter)
+app.use("/user", userRouter)
 
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "page not found"))

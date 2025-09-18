@@ -60,21 +60,13 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req,res,next)=>{
     res.locals.success = req.flash("success")
     res.locals.error = req.flash("error")
+    res.locals.currentUser = req.user;
     next();
 })
 
 // Routes
 app.get("/", (req, res) => {
-    res.send("hello world")
-})
-
-app.get("/demo",async (req,res)=>{
-    let fakeuser =new User({
-        email:"student@gmail.com",
-        username:"demo"
-    })
-    let user = await User.register(fakeuser, "password123");
-    res.send(user)
+    res.redirect("/listing")
 })
 
 app.use("/listing", listingRouter)

@@ -1,7 +1,14 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top h-auto">
+<nav
+  class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top h-auto"
+>
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -9,6 +16,15 @@
         <a class="nav-link active" href="/">Home</a>
         <a class="nav-link" href="/listing">All Listing</a>
         <a class="nav-link" href="/listing/new">Add new Listing</a>
+      </div>
+       <div class="navbar-nav ms-auto">
+        <%if(!currentUser){%>
+          <a class="nav-link active" href="/user/signup">SignUp</a>
+          <a class="nav-link" href="/user/login">LogIn</a>
+        <%}%>
+        <%if(currentUser){%>
+          <a class="nav-link" href="/user/logout">Logout</a>
+        <%}%>
       </div>
     </div>
   </div>

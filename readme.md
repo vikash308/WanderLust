@@ -1,31 +1,29 @@
-# 🌍 WanderLust
+# 🌍 WanderLust  
 
-WanderLust is a full-stack web application for exploring and booking holiday stays.  
-It allows users to browse property listings, add reviews, and manage CRUD operations in a secure and user-friendly way.  
-
----
-
-## ✨ Features
-- 🏡 **Listings** – Add, edit, and delete holiday stay listings.  
-- ⭐ **Reviews** – Leave reviews and ratings for listings.  
-- 🔐 **Error Handling** – Centralized error handling with custom error pages.  
-- 🛠 **Method Override** – Supports PUT and DELETE requests via forms.  
-- 🎨 **Templating** – Dynamic pages rendered using **EJS** with **ejs-mate** layouts.  
-- 📦 **Static Files** – Public folder for CSS, images, and JS.  
+WanderLust is a **full-stack web application** for exploring and booking holiday stays.  
+Users can browse property listings, create/edit/delete their own listings, upload images, leave reviews, and manage their accounts with authentication.  
 
 ---
 
-## 🛠 Tech Stack
+## 🚀 Features  
+- 🏡 **Property Listings**: Add, edit, and delete listings with images.  
+- 🌄 **Cloudinary Integration**: Secure image uploads and storage.  
+- ✨ **Reviews System**: Leave ratings & reviews on listings.  
+- 🔑 **Authentication**: User login & signup with Passport.js.  
+- 📦 **Session Management**: Persistent login using `express-session`.  
+- 🛡 **Validation**: Joi-powered server-side validation.  
+- 🎨 **Templating**: EJS with `ejs-mate` layouts.  
+- 🔄 **Method Override**: Support for PUT/DELETE in forms.  
+- 📢 **Flash Messages**: User feedback for actions.  
+
+---
+
+## 🛠️ Tech Stack  
+- **Frontend**: EJS, Bootstrap (if used)  
 - **Backend**: Node.js, Express.js  
-- **Frontend**: EJS, EJS-Mate  
-- **Database**: MongoDB (Mongoose ODM)  
-- **Middleware**: Method-Override, Express-Error  
+- **Database**: MongoDB with Mongoose  
+- **Authentication**: Passport.js (Local strategy)  
+- **File Uploads**: Multer + Cloudinary  
+- **Validation**: Joi  
 
 ---
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/wanderlust.git
-cd wanderlust

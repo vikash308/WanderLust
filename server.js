@@ -1,3 +1,6 @@
+if(process.env.NODE_ENV != "production"){
+    require("dotenv").config();
+}
 
 const express = require('express');
 const app = express();
@@ -14,6 +17,7 @@ const flash = require("connect-flash")
 const User = require("./models/userModel.js")
 const passport = require("passport");
 const LocalStrategy = require("passport-local")
+
 
 // Middlewares
 app.use(methodOverride('_method'));

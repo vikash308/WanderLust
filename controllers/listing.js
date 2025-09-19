@@ -31,9 +31,11 @@ module.exports.editListingForm = async (req, res) => {
 }
 
 module.exports.addNewListing = async (req, res, next) => {
-  console.log(req.body.listing)
+  let url = req.file.path;
+  let filename= req.file.filename;
   const list = new Listing(req.body.listing);
   list.owner = req.user._id;
+  list.image= {url , filename}
   await list.save();
   req.flash("success", "New Listing Created")
   res.redirect("/listing");

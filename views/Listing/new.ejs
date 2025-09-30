@@ -3,8 +3,13 @@
 <div class="row">
   <div class="col-8 offset-2">
     <h2>Create a New Listing</h2>
-    <form action="/listing" enctype="multipart/form-data" method="post" novalidate class="needs-validation">
-      
+    <form
+      action="/listing"
+      enctype="multipart/form-data"
+      method="post"
+      novalidate
+      class="needs-validation"
+    >
       <div class="mb-3">
         <label for="title" class="form-label">Enter Title</label>
         <input
@@ -84,7 +89,20 @@
         <div class="invalid-feedback">Enter valid Location</div>
       </div>
 
-      <button type="submit" class="btn btn-dark">Submit</button>
+      <select class="form-select mb-3" name="listing[category]" required>
+        <option selected disabled>Select Category</option>
+        <option value="Trending">Trending</option>
+        <option value="Rooms">Rooms</option>
+        <option value="Iconic">Iconic Cities</option>
+        <option value="Mountain">Mountain</option>
+        <option value="Castles">Castles</option>
+        <option value="Pool">Amazing Pool</option>
+        <option value="Camping">Camping</option>
+        <option value="Farms">Farms</option>
+        <option value="Arctic">Arctic</option>
+      </select>
+
+      <button type="submit" class="btn btn2 w-full btn-dark">Submit</button>
     </form>
   </div>
 </div>

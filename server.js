@@ -17,6 +17,7 @@ const flash = require("connect-flash")
 const User = require("./models/userModel.js")
 const passport = require("passport");
 const LocalStrategy = require("passport-local")
+const mongoStore = require("connect-mongo")
 
 
 // Middlewares
@@ -37,19 +38,32 @@ main().then(() => {
 })
 
 async function main() {
-    mongoose.connect("mongodb://localhost:27017/wonderlust")
+    mongoose.connect(process.env.DB_URL)
 }
 
+const store = mongoStore.create({
+    mongoUrl:process.env.DB_URL,
+    crypto:{
+        secret:process.env.SECRET
+    },
+    touchAfter:24*3600
+})
+store.on("error", ()=>{
+    console.log("error in mongo session ",err)
+})
 const sessionoption  = {
-    secret:"mysecretcode",
+    secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
     cookie:{
         expires:Date.now() + 7 * 24 * 60* 60*1000,
         maxAge: 7 * 24 * 60* 60*1000,
         httpOnly:true
-    }
+    },
+    store
 }
+
+
 
 app.use(session(sessionoption));
 app.use(flash())
@@ -64,7 +78,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req,res,next)=>{
     res.locals.success = req.flash("success")
     res.locals.error = req.flash("error")
-    res.locals.currentUser = req.user;
+    res.locals.currentUser = req.user || null;
     next();
 })
 
@@ -72,10 +86,10 @@ app.use((req,res,next)=>{
 app.get("/", (req, res) => {
     res.redirect("/listing")
 })
-
 app.use("/listing", listingRouter)
 app.use("/listing/:id/reviews", reviewRouter)
 app.use("/user", userRouter)
+
 
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "page not found"))

@@ -1,0 +1,160 @@
+.listing-card {
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shadow-custom {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.listing-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.listing-body {
+    padding: 15px 18px;
+}
+
+.listing-description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.price-tag {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.price-tag span {
+    font-weight: 400;
+    color: #666;
+}
+
+.location-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ===== Buttons ===== */
+.btn-custom {
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editBtn {
+    background: #007bff;
+    color: #fff;
+}
+
+.deleteBtn {
+    background: #ff3b30;
+    color: #fff;
+}
+
+.btn-custom:hover {
+    filter: brightness(0.9);
+}
+
+/* ===== Review Form ===== */
+.review-container {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.custom-textarea {
+    resize: none;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.custom-textarea:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+
+.starability-slot {
+    margin: auto;
+}
+
+/* ===== Review Cards ===== */
+.review-card {
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.starability-result {
+    font-size: 1rem;
+}
+
+/* ===== Map Section ===== */
+.location-section {
+    text-align: center;
+}
+
+.map-container {
+    height: 400px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    margin-bottom: 3rem;
+}
+
+/* ===== Mobile Tweaks ===== */
+@media (max-width: 576px) {
+    .listing-img {
+        height: 200px;
+    }
+    .price-tag {
+        font-size: 1rem;
+    }
+    .listing-title {
+        font-size: 1.5rem;
+    }
+    .review-container {
+        padding: 15px;
+    }
+    .btn {
+        width: 100%;
+    }
+    .review-card {
+        padding: 12px;
+    }
+    .map-container {
+        height: 400px;
+    }
+     .location-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .map-container {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+}

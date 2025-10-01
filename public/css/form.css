@@ -1,0 +1,26 @@
+
+  .card {
+  border: none;
+  background-color: #fff;
+}
+
+input.form-control,
+textarea.form-control,
+select.form-select {
+  border: 1px solid #ddd;
+  transition: all 0.2s ease;
+}
+
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-select:focus {
+  border-color: #fe424d;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.2);
+}
+
+.btn-dark:hover {
+  background-color: #fe424d;
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+

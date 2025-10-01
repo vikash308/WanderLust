@@ -1,72 +1,65 @@
-<div class="second-nav">
-  <i class="fa-solid fa-angles-left" id="leftArrow"></i>
-  <div class="filters">
-    <a href="/listing/category/?category=Trending">
-      <div class="filter">
-        <i class="fa-solid fa-fire"></i>
-        <p>Trending</p>
-      </div>
+<div class="category-bar d-flex align-items-center justify-content-between">
+  <!-- Left Arrow -->
+  <button class="arrow-btn left" id="leftArrow">
+    <i class="fa-solid fa-angles-left"></i>
+  </button>
+
+  <!-- Filters -->
+  <div class="filters d-flex flex-nowrap overflow-auto">
+    <a href="/listing/category/?category=Trending" class="filter">
+      <i class="fa-solid fa-fire"></i>
+      <p>Trending</p>
     </a>
-    <a href="/listing/category/?category=Rooms">
-      <div class="filter">
-        <i class="fa-solid fa-bed"></i>
-        <p>Rooms</p>
-      </div>
+    <a href="/listing/category/?category=Rooms" class="filter">
+      <i class="fa-solid fa-bed"></i>
+      <p>Rooms</p>
     </a>
-    <a href="/listing/category/?category=Iconic">
-      <div class="filter">
-        <i class="fa-solid fa-mountain-city"></i>
-        <p>Iconic Cities</p>
-      </div>
+    <a href="/listing/category/?category=Iconic" class="filter">
+      <i class="fa-solid fa-mountain-city"></i>
+      <p>Iconic</p>
     </a>
-    <a href="/listing/category/?category=Mountain">
-      <div class="filter">
-        <i class="fa-solid fa-mountain"></i>
-        <p>mountain</p>
-      </div>
+    <a href="/listing/category/?category=Mountain" class="filter">
+      <i class="fa-solid fa-mountain"></i>
+      <p>Mountain</p>
     </a>
-    <a href="/listing/category/?category=Castles">
-      <div class="filter">
-        <i class="fa-solid fa-fort-awesome"></i>
-        <p>Castles</p>
-      </div>
+    <a href="/listing/category/?category=Castles" class="filter">
+      <i class="fa-solid fa-fort-awesome"></i>
+      <p>Castles</p>
     </a>
-    <a href="/listing/category/?category=Pool">
-      <div class="filter">
-        <i class="fa-solid fa-person-swimming"></i>
-        <p>Amazing Pool</p>
-      </div>
+    <a href="/listing/category/?category=Pool" class="filter">
+      <i class="fa-solid fa-person-swimming"></i>
+      <p>Pool</p>
     </a>
-    <a href="/listing/category/?category=Camping">
-      <div class="filter">
-        <i class="fa-solid fa-campground"></i>
-        <p>camping</p>
-      </div>
+    <a href="/listing/category/?category=Camping" class="filter">
+      <i class="fa-solid fa-campground"></i>
+      <p>Camping</p>
     </a>
-    <a href="/listing/category/?category=Farms">
-      <div class="filter">
-        <i class="fa-solid fa-cow"></i>
-        <p>farms</p>
-      </div>
+    <a href="/listing/category/?category=Farms" class="filter">
+      <i class="fa-solid fa-cow"></i>
+      <p>Farms</p>
     </a>
-    <a href="/listing/category/?category=Arctic">
-      <div class="filter">
-        <i class="fa-regular fa-snowflake"></i>
-        <p>Arctic</p>
-      </a>
-    </div>
+    <a href="/listing/category/?category=Arctic" class="filter">
+      <i class="fa-regular fa-snowflake"></i>
+      <p>Arctic</p>
+    </a>
   </div>
-  <i class="fa-solid fa-angles-right" id="rightArrow"></i>
+
+  <!-- Right Arrow -->
+  <button class="arrow-btn right" id="rightArrow">
+    <i class="fa-solid fa-angles-right"></i>
+  </button>
 </div>
 
-  <div class="form-check form-switch">
-    <input
-      class="form-check-input"
-      type="checkbox"
-      id="flexSwitchCheckDefault"
-      checked
-    />
-    <label class="form-check-label" for="flexSwitchCheckDefault"
-      >price with taxes</label
-    >
-  </div>
+<!-- Toggle -->
+<div class="form-check form-switch mt-3">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    id="flexSwitchCheckDefault"
+    checked
+  />
+  <label class="form-check-label" for="flexSwitchCheckDefault">
+    Price with taxes
+  </label>
+</div>
+

@@ -1,22 +1,22 @@
 <% layout("/layouts/boilerPlate")%>
 <%- include("../includes/category.ejs")%>
 
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 mt-3 mb-5 g-4">
   <% if(listings && listings.length > 0) { %>
     <% for(let list of listings) { %>
-      <a href="/listing/<%= list._id %>">
-        <div class="card">
-          <img src="<%= list.image.url %>" class="card-img-top" alt="listing image" style="height: 20rem" />
-          <div class="card-img-overlay"></div>
-          <div class="card-body">
-            <p class="card-text">
-              <b><%= list.title %></b><br />
-              <%= list.price.toLocaleString("en-IN") %>/night
-              <i class="taxInfo">&nbsp; &nbsp; &nbsp; +18% GST</i>
-            </p>
+      <div class="col">
+        <a href="/listing/<%= list._id %>" class="listing-card text-decoration-none">
+          <div class="image-wrapper">
+            <img src="<%= list.image.url %>" alt="listing image" />
           </div>
-        </div>
-      </a>
+          <div class="listing-info">
+            <h5 class="title"><%= list.title %></h5>
+            <p class="price">&#8377;<%= list.price.toLocaleString("en-IN") %> <span>/night</span></p>
+            <p class="taxInfo">+18% GST</p>
+          </div>
+        </a>
+      </div>
     <% } %>
   <% } else { %>
     <div class="col-12 d-flex flex-column align-items-center mt-5">

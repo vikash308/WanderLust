@@ -10,7 +10,7 @@ const listingSchema = joi.object({
         image: joi.string().allow("", null),
         category: joi.string().valid(
             "Trending", "Rooms", "Iconic", "Mountain", "Castles", "Pool", "Camping", "Farms", "Arctic"
-        ).required()
+        ),
     }).required()
 })
 

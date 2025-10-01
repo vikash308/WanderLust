@@ -99,3 +99,10 @@ module.exports.showCategory = async (req,res)=>{
 
   res.render("Listing/index", { listings, category });
 }
+
+
+module.exports.search = async (req,res)=>{
+  let location = req.query.search;
+  let listings = await Listing.find({location});
+  res.render("Listing/index", { listings });
+}

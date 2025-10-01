@@ -1,31 +1,58 @@
 <% layout("/layouts/boilerPlate") %>
 
-<div class="row mt-3">
-    <div class="col-6 offset-3">
+<div class="row justify-content-center mt-5">
+  <div class="col-12 col-md-6 col-lg-5">
 
+    <div class="card shadow-sm p-4 rounded-4">
+      <h2 class="text-center fw-bold mb-4">Login to WanderLust</h2>
+
+      <form action="/user/login" method="post" class="needs-validation" novalidate>
+
+        <!-- Username -->
+        <div class="mb-3">
+          <label for="username" class="form-label fw-semibold">Username</label>
+          <input 
+            type="text" 
+            name="username" 
+            id="username" 
+            class="form-control rounded-pill px-3 py-2" 
+            placeholder="Enter your username" 
+            required
+          >
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid username</div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label fw-semibold">Password</label>
+          <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            class="form-control rounded-pill px-3 py-2" 
+            placeholder="Enter your password" 
+            required
+          >
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid password</div>
+        </div>
+
+        <!-- Submit -->
+        <div class="d-grid mt-4">
+          <button type="submit" class="btn btn-dark rounded-pill py-2 shadow-sm">
+            Log In
+          </button>
+        </div>
+
+        <!-- Optional: Sign Up Link -->
+        <p class="text-center mt-3 mb-0">
+          Don't have an account? 
+          <a href="/user/signup" class="fw-semibold text-decoration-none">Sign Up</a>
+        </p>
+
+      </form>
     </div>
-</div><% layout("/layouts/boilerPlate") %>
 
-<div class="row mt-3">
-    <div class="col-6 offset-3">
-        <h2 class="mb-5">Login on WanderLust</h2>
-        <form action="/user/login" method="post" class="needs-validation" novalidate>
-            <div class="mb-3">
-                <label for="username" class="form-label" >Username</label>
-                <input type="text" name="username" id="username" class="form-control" required>
-                <div class="valid-feedback">Looks Good</div>
-                <div class="invalid-feedback">please enter valid username</div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label" >Password</label>
-                <input type="text" name="password" id="password" class="form-control" required>
-                <div class="valid-feedback">Looks Good</div>
-                <div class="invalid-feedback">please enter valid password</div>
-            </div>
-            <div>
-                <button class="btn btn-dark">LogIn</button>
-            </div>
-        </form>
-    </div>
-
+  </div>
 </div>

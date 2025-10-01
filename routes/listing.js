@@ -18,7 +18,12 @@ router.route("/")
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 router.get("/category",wrapAsync(listingController.showCategory) )
 router.get("/search",wrapAsync(listingController.search))
-
+router.get("/privacy",(req,res)=>{
+   res.render("Listing/privacy")
+})
+router.get("/terms",(req,res)=>{
+   res.render("Listing/terms")
+})
 
 router.route("/:id")
 .get(wrapAsync(listingController.showListing))
@@ -26,7 +31,6 @@ router.route("/:id")
 .delete( isLoggedIn, isOwner,wrapAsync(listingController.deleteListing));
 
 router.get("/:id/edit",  isLoggedIn, isOwner,wrapAsync(listingController.editListingForm))
-
 
 
 module.exports = router;

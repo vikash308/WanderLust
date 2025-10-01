@@ -128,9 +128,6 @@
   .arrow-btn{
     display: none;
   }
-  .category-bar{
-    width:100vw;
-  }
   .filters{
     display: flex;
     justify-content: center;

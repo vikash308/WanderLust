@@ -106,5 +106,5 @@ app.use((err, req, res, next) => {
 // Server Listening
 const port = 3000;
 app.listen(port, () => {
-    console.log(`server is listening on ${port}`)
+    console.log(`http://localhost:${port}`)
 })

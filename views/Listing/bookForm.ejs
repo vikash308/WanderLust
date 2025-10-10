@@ -1,0 +1,49 @@
+<% layout("/layouts/boilerPlate") %>
+
+<div class="container my-5">
+  <div class="col-lg-8 mx-auto">
+    <div class="card shadow-sm p-4 rounded-4">
+      <h2 class="fw-bold mb-4 text-center">Start Your Booking</h2>
+
+      <form action="/listing/<%= listing._id %>/book" method="POST">
+        
+        <!-- Dates -->
+        <div class="row mb-3">
+          <div class="col">
+            <label for="checkIn" class="form-label">Check-in</label>
+            <input type="date" name="checkIn" id="checkIn" class="form-control" required>
+          </div>
+          <div class="col">
+            <label for="checkOut" class="form-label">Check-out</label>
+            <input type="date" name="checkOut" id="checkOut" class="form-control" required>
+          </div>
+        </div>
+
+        <!-- Guests -->
+        <div class="mb-3">
+          <label for="guests" class="form-label">Number of Guests</label>
+          <input type="number" name="guests" id="guests" class="form-control" min="1" required>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" name="phone" id="phone" class="form-control" placeholder="e.g., +91 9876543210" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="e.g., you@example.com" required>
+        </div>
+
+        <!-- Special Requests (optional) -->
+        <div class="mb-3">
+          <label for="notes" class="form-label">Special Requests (optional)</label>
+          <textarea name="notes" id="notes" rows="3" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-danger w-100">Continue to Payment</button>
+      </form>
+    </div>
+  </div>
+</div>

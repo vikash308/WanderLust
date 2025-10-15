@@ -1,33 +1,26 @@
-# 🚀 Listing App
+# 🌍 WanderLust
 
-A full-stack web application for managing product listings, user authentication, reviews, and sessions. Built with **Node.js**, **Express.js**, **MongoDB**, **EJS**, and **Passport.js**.
+WanderLust is a full-stack web application for exploring and booking holiday stays.  
+It allows users to browse property listings, add reviews, and manage CRUD operations in a secure and user-friendly way.  
+
+[🚀 Live Demo](https://wanderlust-umhc.onrender.com)
 
 ---
 
 ## ✨ Features
-
-- ✅ User Authentication (Register / Login with Passport.js)  
-- ✅ CRUD Operations for Listings  
-- ✅ Nested Reviews for Listings  
-- ✅ Flash Messages (Success / Error)  
-- ✅ Session Management with MongoDB (`connect-mongo`)  
-- ✅ Method Override for PUT & DELETE  
-- ✅ EJS Templates with Layouts (`ejs-mate`)  
-- ✅ Environment Variable Support via `.env`
+- 🏡 **Listings** – Add, edit, and delete holiday stay listings.  
+- ⭐ **Reviews** – Leave reviews and ratings for listings.  
+- 🔐 **Error Handling** – Centralized error handling with custom error pages.  
+- 🛠 **Method Override** – Supports PUT and DELETE requests via forms.  
+- 🎨 **Templating** – Dynamic pages rendered using **EJS** with **ejs-mate** layouts.  
+- 📦 **Static Files** – Public folder for CSS, images, and JS.  
 
 ---
 
 ## 🛠 Tech Stack
-
-| Layer       | Technology |
-|------------|------------|
-| Backend    | Node.js, Express.js |
-| Database   | MongoDB, Mongoose |
-| Authentication | Passport.js, Passport-Local-Mongoose |
-| Templating | EJS, EJS-Mate |
-| Sessions   | Express-Session, Connect-Mongo |
-| Utilities  | Method-Override, Connect-Flash, dotenv |
+- **Backend**: Node.js, Express.js  
+- **Frontend**: EJS, EJS-Mate  
+- **Database**: MongoDB (Mongoose ODM)  
+- **Middleware**: Method-Override, Express-Error  
 
 ---
-
-

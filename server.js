@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const listingRouter = require("./routes/listing.js")
 const reviewRouter = require("./routes/review.js")
 const userRouter = require("./routes/user.js")
+const bookingRouter = require("./routes/booking.js")
 const path = require("path")
 const methodOverride = require("method-override")
 const ejsMate = require("ejs-mate") 
@@ -89,9 +90,8 @@ app.get("/", (req, res) => {
 app.use("/listing", listingRouter)
 app.use("/listing/:id/reviews", reviewRouter)
 app.use("/user", userRouter)
-app.get("/confirm", (req, res) => {
-    res.render("Listing/confirm")
-})
+app.use("/booking", bookingRouter)
+
 
 app.use((req, res, next) => {
     next(new ExpressError(404, "page not found"))

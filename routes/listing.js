@@ -24,9 +24,7 @@ router.get("/privacy",(req,res)=>{
 router.get("/terms",(req,res)=>{
    res.render("Listing/terms")
 })
-router.get("/:id/book", listingController.book)
-router.post("/:id/book", listingController.bookForm)
-router.get("/:id/payment", listingController.payment)
+
 
 router.route("/:id")
 .get(wrapAsync(listingController.showListing))

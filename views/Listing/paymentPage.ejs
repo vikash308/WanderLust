@@ -1,0 +1,108 @@
+<% layout("/layouts/boilerPlate") %>
+
+<style>
+  .payment-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    padding: 30px;
+    transition: transform 0.3s;
+  }
+
+  .payment-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .payment-card h3 {
+    color: #fe424d;
+    font-weight: 600;
+  }
+
+  .payment-option {
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+  }
+
+  .payment-option img {
+    margin-right: 12px;
+  }
+
+
+  .payment-option input {
+    margin-right: 12px;
+  }
+
+  #payBtn {
+    background: #fe424d;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    color: #fff !important;
+  }
+
+  #payBtn:hover {
+    background: #fe424d;
+  }
+</style>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="payment-card">
+        <h3 class="text-center mb-4">Complete Your Payment</h3>
+        <p class="text-center lead mb-4">You're about to pay <strong>₹<%= total %></strong></p>
+
+        <h5 class="mb-3">Select Payment Method</h5>
+
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="upi" checked>
+          <img src="https://cdn-icons-png.flaticon.com/512/825/825539.png" width="24">
+          UPI (Google Pay / PhonePe / Paytm)
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/217/217425.png" width="24">
+          Credit / Debit Card
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="netbanking">
+          <img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" width="24">
+          Net Banking
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="wallet">
+          <img src="https://cdn-icons-png.flaticon.com/512/883/883408.png" width="24">
+          Wallets
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="emi">
+          <img src="https://cdn-icons-png.flaticon.com/512/1570/1570302.png" width="24">
+          EMI / Pay Later
+        </label>
+
+        <div class="text-center mt-4">
+          <a href="/confirm" id="payBtn" class="btn btn-success btn-lg w-100">Pay ₹<%= total %></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('payBtn').addEventListener('click', function() {
+    const method = document.querySelector('input[name="paymentMethod"]:checked').value;
+    alert(`💳 You selected ${method.toUpperCase()} payment.\n(This is a demo — no real transaction.)`);
+  });
+</script>

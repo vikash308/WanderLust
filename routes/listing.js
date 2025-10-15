@@ -32,5 +32,8 @@ router.route("/:id")
 
 router.get("/:id/edit",  isLoggedIn, isOwner,wrapAsync(listingController.editListingForm))
 
+router.get("/:id/book", listingController.book)
+router.post("/:id/book", listingController.bookForm)
+router.get("/:id/payment", listingController.payment)
 
 module.exports = router;

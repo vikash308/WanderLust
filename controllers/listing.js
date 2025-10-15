@@ -1,4 +1,5 @@
 const Listing = require("../models/listing")
+const dayjs = require('dayjs');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 async function geocode(locationName) {
@@ -105,4 +106,66 @@ module.exports.search = async (req,res)=>{
   let location = req.query.search;
   let listings = await Listing.find({location});
   res.render("Listing/index", { listings });
+}
+
+module.exports.book = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const listing = await Listing.findById(id);
+
+    if (!listing) {
+      return res.status(404).send('Listing not found');
+    }
+
+    res.render("Listing/bookForm", { listing });
+  } catch (err) {
+    console.error("Error fetching listing:", err);
+    res.status(500).send("Server error");
+  }
+};
+
+let totalAmount;
+
+module.exports.bookForm = async (req, res) => {
+  const { id } = req.params;
+  const listing = await Listing.findById(id);
+
+  if (!listing) {
+    return res.status(404).send("Listing not found");
+  }
+
+  const { checkIn, checkOut, guests, phone, email, notes } = req.body;
+
+  // Calculate number of nights
+  const nights = dayjs(checkOut).diff(dayjs(checkIn), 'day');
+  if (nights <= 0) {
+    return res.status(400).send("Check-out must be after check-in.");
+  }
+
+  // Pricing calculations
+  const basePrice = listing.price * nights;
+  const discount = 500; // You can customize this
+  const taxes = 300;    // Or calculate percentage
+  const total = basePrice - discount + taxes;
+  totalAmount = total;
+  // Now render the booking confirmation page
+  res.render("Listing/book", {
+    listing,
+    checkIn,
+    checkOut,
+    guests,
+    phone,
+    email,
+    notes,
+    nights,
+    discount,
+    taxes,
+    total
+  });
+};
+
+module.exports.payment = (req, res) => {
+  let total = totalAmount;
+  res.render("Listing/paymentPage", { total })
 }
